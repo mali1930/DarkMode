@@ -1,16 +1,13 @@
-import React from "react";
-import Body from "../Comp/Body";
-
-const Article = ({ id, title, date, length, snippet }) => {
+import moment from "moment";
+const Article = ({title, date, length, snippet }) => {
   return (
     <>
-      <div>
-        <Body />
+      <>
         <h1>{title}</h1>
-        <p>{date}</p>
-        <p>{length}</p>
+        <p>{moment(date).format('dddd Do, YYYY')}</p>
+        <p>{length} minute read</p>
         <p>{snippet}</p>
-      </div>
+      </>
     </>
   );
 };
